@@ -184,7 +184,7 @@ elif prediction_type == "💵 Prediction of Patient, Insurance, and Total Hospit
     with dem_col2:
         gender = st.selectbox("Gender", ["Select...", "Male", "Female"])
     with dem_col3:
-        insurance_type = st.selectbox("Insurance Type", ["Select...", "ArmedForces", "Free", "Private", "Veterans"], key="ins")
+        insurance_type = st.selectbox("Insurance Type", ["Select...", "Social Health Insurance", "Free", "Private", "Veterans"], key="ins")
     with dem_col4:
         los = st.number_input("Length of Stay (days)", min_value=1, max_value=25, key="los_cost")
 
@@ -268,13 +268,13 @@ elif prediction_type == "💵 Prediction of Patient, Insurance, and Total Hospit
             with c1:
                 st.markdown(f"""
                     <div class='cost-card blue-card'>
-                        Insurance Cost<br><span style='font-size: 25px;'>{insurance_cost:,.0f} USD</span>
+                        Insurer Payment<br><span style='font-size: 25px;'>{insurance_cost:,.0f} USD</span>
                     </div>
                 """, unsafe_allow_html=True)
             with c2:
                 st.markdown(f"""
                     <div class='cost-card red-card'>
-                        Patient Cost<br><span style='font-size: 25px;'>{patient_cost:,.0f} USD</span>
+                        Patient Out-of-Pocket (OOP)<br><span style='font-size: 25px;'>{patient_cost:,.0f} USD</span>
                     </div>
                 """, unsafe_allow_html=True)
             st.markdown(f"""
